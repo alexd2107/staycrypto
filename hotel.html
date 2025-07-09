@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Skyline Villa, Dubai | StayCrypto</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <title>Browse Stays | StayCrypto</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- Crypto price ticker -->
-  <div class="crypto-ticker">
-    <span id="sol-price">SOL: $0</span> | 
-    <span id="btc-price">BTC: $0</span>
-  </div>
-
   <header>
     <div class="logo">StayCrypto</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="hotels.html">Hotels</a>
-      <a href="checkout.html">Checkout</a>
     </nav>
   </header>
 
-  <section class="hotel-details">
-    <h1>Skyline Villa, Dubai</h1>
-    <img src="images/hotel1.jpg" alt="Skyline Villa" style="max-width:100%; margin-bottom: 20px;">
-    <p>From 2.5 SOL / 0.04 BTC / 1200 USDT per night</p>
+  <section class="stays">
+    <h1>Available Luxury Hotels & Villas</h1>
+    <div class="hotel-grid">
+      <div class="hotel-card">
+        <img src="images/hotel1.jpg" alt="Skyline Villa Dubai">
+        <h3>Skyline Villa, Dubai</h3>
+        <p>From 2.5 SOL / 0.04 BTC / 1200 USDT per night</p>
+        <a class="button" href="hotel.html">Book Now</a>
+      </div>
 
-    <form id="quickBookingForm" style="margin-top: 20px;">
-      <label>Check-in:<br><input type="date" id="checkin" required></label><br><br>
-      <label>Check-out:<br><input type="date" id="checkout" required></label><br><br>
-      <label>Guests:<br><input type="number" id="guests" value="1" min="1" required></label><br><br>
-      <button type="submit" class="button">Book Stay</button>
-    </form>
+      <div class="hotel-card">
+        <img src="images/hotel2.jpg" alt="Malibu Beachfront Retreat">
+        <h3>Malibu Beachfront Retreat</h3>
+        <p>From 3.1 SOL / 0.05 BTC / 1500 USDT per night</p>
+        <a class="button" href="hotel.html">Book Now</a>
+      </div>
+
+      <div class="hotel-card">
+        <img src="images/hotel3.jpg" alt="Santorini Cliffside Villa">
+        <h3>Santorini Cliffside Villa</h3>
+        <p>From 2.8 SOL / 0.045 BTC / 1300 USDT per night</p>
+        <a class="button" href="hotel.html">Book Now</a>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 StayCrypto. Pay securely in crypto.</p>
+    <p>&copy; 2025 StayCrypto</p>
   </footer>
 
   <script src="js/script.js"></script>
