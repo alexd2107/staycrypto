@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Stay | StayCrypto</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">StayCrypto</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+  </header>
+
+  <section class="hotel-detail">
+    <img src="images/hotel1.jpg" alt="Skyline Villa">
+    <div class="details">
+      <h2>Skyline Villa, Dubai</h2>
+      <p>Experience luxury at the top of the Dubai skyline with a private infinity pool and 24/7 concierge.</p>
+      <p><strong>2.5 SOL / 0.04 BTC / 1200 USDT per night</strong></p>
+
+      <form id="bookingForm">
+        <label>Check-in Date:<br><input type="date" id="checkin"></label><br>
+        <label>Check-out Date:<br><input type="date" id="checkout"></label><br>
+        <label>Guests:<br><input type="number" id="guests" value="2" min="1"></label><br>
+        <button type="submit" class="button">Book Stay</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 StayCrypto. Pay securely in crypto.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
