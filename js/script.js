@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
   updatePrices();
   setInterval(updatePrices, 60000); // refresh every 60 seconds
 
+  const base = `/${window.location.pathname.split("/")[1]}`;  // detects 'staycrypto'
+
   // Booking form on index or hotels page
   const bookingForm = document.getElementById("bookingForm");
   if (bookingForm) {
@@ -52,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       localStorage.setItem("staycryptoBooking", JSON.stringify(booking));
 
-      window.location.href = "checkout.html";
+      window.location.href = `${base}/checkout.html`;
     });
   }
 
@@ -92,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       localStorage.setItem("staycryptoBooking", JSON.stringify(booking));
 
-      window.location.href = "checkout.html";
+      window.location.href = `${base}/checkout.html`;
     });
   }
 
@@ -102,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!booking) {
       alert("No booking found. Please select a hotel first.");
-      window.location.href = "hotels.html";
+      window.location.href = `${base}/hotels.html`;
       return;
     }
 
@@ -127,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const confirmBtn = document.querySelector(".button");
     confirmBtn.addEventListener("click", e => {
       e.preventDefault();
-      window.location.href = "confirmation.html";
+      window.location.href = `${base}/confirmation.html`;
     });
   }
 
