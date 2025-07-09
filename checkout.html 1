@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Checkout | StayCrypto</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
@@ -12,44 +11,25 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="hotels.html">Hotels</a>
-      <a href="checkout.html">Checkout</a>
     </nav>
   </header>
 
   <section class="checkout">
-    <h2>Booking Summary</h2>
-    <div class="summary">
-      <!-- Booking details will populate here via JS -->
+    <h1>Complete Your Booking</h1>
+    <div class="summary"></div>
+
+    <div class="payment">
+      <h2>Send Payment To:</h2>
+      <p><strong>SOL Address:</strong> 7QaFAQ8nPYzjcnZpEgWDqftQixooRJuSqCBLosPWYdis</p>
+      <img src="images/sol_qr.png" alt="SOL QR Code" width="200">
+      <p>Please send the exact total amount to the wallet above.</p>
     </div>
 
-    <h3>Pay with Crypto</h3>
-    <div class="payment-options">
-
-      <div>
-        <h4>SOL</h4>
-        <img src="images/qr-sol.png" alt="SOL QR" class="qr">
-        <p><strong>7QaFAQ8nPYzjcnZpEgWDqftQixooRJuSqCBLosPWYdis</strong></p>
-      </div>
-
-      <div>
-        <h4>BTC</h4>
-        <img src="images/qr-btc.png" alt="BTC QR" class="qr">
-        <p>your_btc_wallet_address_here</p>
-      </div>
-
-      <div>
-        <h4>USDT</h4>
-        <img src="images/qr-usdt.png" alt="USDT QR" class="qr">
-        <p>your_usdt_wallet_address_here</p>
-      </div>
-
-    </div>
-
-    <button class="button">Confirm Payment</button>
+    <a class="button" href="#" id="confirmBtn">Confirm Booking</a>
   </section>
 
   <footer>
-    <p>&copy; 2025 StayCrypto. Pay securely in crypto.</p>
+    <p>&copy; 2025 StayCrypto</p>
   </footer>
 
   <script src="js/script.js"></script>
