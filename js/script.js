@@ -1,7 +1,22 @@
-// Wait for DOM to load
 document.addEventListener("DOMContentLoaded", () => {
 
-  // HOTEL.HTML booking form logic
+  // Fetch live crypto prices from CoinGecko
+  function updatePrices() {
+    fetch("https://api.coingecko.com/api/v3/simple/price?ids=solana,bitcoin&vs_currencies=usd")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("sol-price").textContent = `SOL: $${data.solana.usd.toFixed(2)}`;
+        document.getElementById("btc-price").textContent = `BTC: $${data.bitcoin.usd.toLocaleString()}`;
+      })
+      .catch(error => {
+        console.error("Error fetching crypto prices:", error);
+      });
+  }
+
+  updatePrices();
+  setInterval(updatePrices, 60000); // refresh every 60 seconds
+
+  // HOTEL booking form logic
   const bookingForm = document.getElementById("bookingForm");
   if (bookingForm) {
     bookingForm.addEventListener("submit", e => {
@@ -26,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Store booking info in localStorage
       const booking = {
         hotelName: "Skyline Villa, Dubai",
         priceSol: 2.5,
@@ -38,12 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       localStorage.setItem("staycryptoBooking", JSON.stringify(booking));
 
-      // Redirect to checkout page
       window.location.href = "checkout.html";
     });
   }
 
-  // CHECKOUT.HTML logic
+  // CHECKOUT logic
   if (window.location.pathname.endsWith("checkout.html")) {
     const booking = JSON.parse(localStorage.getItem("staycryptoBooking"));
 
@@ -53,11 +66,38 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Calculate nights
     const checkinDate = new Date(booking.checkin);
     const checkoutDate = new Date(booking.checkout);
     const diffTime = checkoutDate - checkinDate;
     const nights = diffTime / (1000 * 60 * 60 * 24);
 
-    // Calculate total prices
-    const totalSol = (booking.priceSol * nights).to*
+    const totalSol = (booking.priceSol * nights).toFixed(2);
+    const totalBtc = (booking.priceBtc * nights).toFixed(4);
+    const totalUsdt = (booking.priceUsdt * nights).toFixed(2);
+
+    const summaryDiv = document.querySelector(".summary");
+    summaryDiv.innerHTML = `
+      <p><strong>Hotel:</strong> ${booking.hotelName}</p>
+      <p><strong>Check-in:</strong> ${booking.checkin}</p>
+      <p><strong>Check-out:</strong> ${booking.checkout}</p>
+      <p><strong>Guests:</strong> ${booking.guests}</p>
+      <p><strong>Total:</strong> ${totalSol} SOL / ${totalBtc} BTC / ${totalUsdt} USDT</p>
+    `;
+
+    const confirmBtn = document.querySelector(".button");
+    confirmBtn.addEventListener("click", e => {
+      e.preventDefault();
+      window.location.href = "confirmation.html";
+    });
+  }
+
+  // CONFIRMATION page booking reference
+  if (window.location.pathname.endsWith("confirmation.html")) {
+    const refSpan = document.getElementById("bookingRef");
+    if (refSpan) {
+      const randomRef = "SC-" + Math.floor(100000 + Math.random() * 900000);
+      refSpan.textContent = randomRef;
+    }
+  }
+
+});
