@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updatePrices();
   setInterval(updatePrices, 60000); // refresh every 60 seconds
 
-  // HOTEL booking form logic
+  // Booking form on index or hotels page
   const bookingForm = document.getElementById("bookingForm");
   if (bookingForm) {
     bookingForm.addEventListener("submit", e => {
@@ -56,7 +56,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // CHECKOUT logic
+  // Quick booking form on hotel details page
+  const quickBookingForm = document.getElementById("quickBookingForm");
+  if (quickBookingForm) {
+    quickBookingForm.addEventListener("submit", e => {
+      e.preventDefault();
+
+      const checkin = document.getElementById("checkin").value;
+      const checkout = document.getElementById("checkout").value;
+      const guests = parseInt(document.getElementById("guests").value);
+
+      if (!checkin || !checkout) {
+        alert("Please select check-in and check-out dates.");
+        return;
+      }
+
+      if (new Date(checkout) <= new Date(checkin)) {
+        alert("Check-out date must be after check-in date.");
+        return;
+      }
+
+      if (guests < 1) {
+        alert("Please enter a valid number of guests.");
+        return;
+      }
+
+      const booking = {
+        hotelName: "Skyline Villa, Dubai",
+        priceSol: 2.5,
+        priceBtc: 0.04,
+        priceUsdt: 1200,
+        checkin,
+        checkout,
+        guests
+      };
+      localStorage.setItem("staycryptoBooking", JSON.stringify(booking));
+
+      window.location.href = "checkout.html";
+    });
+  }
+
+  // Checkout page logic
   if (window.location.pathname.endsWith("checkout.html")) {
     const booking = JSON.parse(localStorage.getItem("staycryptoBooking"));
 
@@ -91,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // CONFIRMATION page booking reference
+  // Confirmation page logic
   if (window.location.pathname.endsWith("confirmation.html")) {
     const refSpan = document.getElementById("bookingRef");
     if (refSpan) {
