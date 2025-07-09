@@ -1,0 +1,268 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #eee;
+}
+
+body {
+  background: #121212;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: #00ffe7;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #00bfa5;
+}
+
+header {
+  background: #1e1e1e;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #222;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: #00ffe7;
+}
+
+nav a {
+  margin-left: 2rem;
+  font-weight: 600;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0ff, #008080);
+  color: #121212;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.button {
+  background: #00ffe7;
+  color: #121212;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1.1rem;
+  box-shadow: 0 0 10px #00ffe7aa;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #00bfa5;
+  box-shadow: 0 0 15px #00bfa5cc;
+}
+
+.featured-hotels, .hotel-listing {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.featured-hotels h2, .hotel-listing h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+  color: #00ffe7;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.hotel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 2rem;
+}
+
+.hotel-card {
+  background: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #00ffe7aa;
+  transition: transform 0.3s;
+}
+
+.hotel-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #00bfa5cc;
+}
+
+.hotel-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.hotel-card h3 {
+  margin: 1rem;
+  font-size: 1.3rem;
+}
+
+.hotel-card p {
+  margin: 0 1rem 1rem;
+  font-weight: 600;
+}
+
+section.hotel-detail {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00ffe7aa;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+section.hotel-detail img {
+  flex: 1 1 300px;
+  border-radius: 12px;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+section.hotel-detail .details {
+  flex: 1 1 400px;
+  color: #eee;
+}
+
+section.hotel-detail .details h2 {
+  margin-bottom: 1rem;
+  color: #00ffe7;
+  font-size: 2rem;
+}
+
+section.hotel-detail .details p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+section.hotel-detail form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #00ffe7;
+}
+
+section.hotel-detail form input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+section.hotel-detail form button {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+section.checkout, section.confirmation {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 15px #00ffe7aa;
+  text-align: center;
+}
+
+section.checkout h2, section.confirmation h2 {
+  margin-bottom: 1.5rem;
+  color: #00ffe7;
+  font-size: 2rem;
+}
+
+section.checkout .summary p, section.checkout .summary strong {
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #eee;
+}
+
+.payment-options {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.payment-options div {
+  background: #121212;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 10px #00ffe7aa;
+  flex: 1 1 150px;
+  max-width: 200px;
+  text-align: center;
+}
+
+.payment-options h4 {
+  margin-bottom: 1rem;
+  color: #00ffe7;
+}
+
+.qr {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 8px #00ffe7aa;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: #121212;
+  border-top: 1px solid #222;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  section.hotel-detail {
+    flex-direction: column;
+  }
+  .payment-options {
+    flex-direction: column;
+  }
+  .payment-options div {
+    max-width: 100%;
+  }
+}
