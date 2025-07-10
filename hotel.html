@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Browse Stays | StayCrypto</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Hotel Booking | StayCrypto</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header>
@@ -14,30 +14,16 @@
     </nav>
   </header>
 
-  <section class="stays">
-    <h1>Available Luxury Hotels & Villas</h1>
-    <div class="hotel-grid">
-      <div class="hotel-card">
-        <img src="images/hotel1.jpg" alt="Skyline Villa Dubai">
-        <h3>Skyline Villa, Dubai</h3>
-        <p>From 2.5 SOL / 0.04 BTC / 1200 USDT per night</p>
-        <a class="button" href="hotel.html">Book Now</a>
-      </div>
+  <section class="hotel-details">
+    <h1 id="hotelName">Hotel Name</h1>
+    <p id="prices"></p>
 
-      <div class="hotel-card">
-        <img src="images/hotel2.jpg" alt="Malibu Beachfront Retreat">
-        <h3>Malibu Beachfront Retreat</h3>
-        <p>From 3.1 SOL / 0.05 BTC / 1500 USDT per night</p>
-        <a class="button" href="hotel.html">Book Now</a>
-      </div>
-
-      <div class="hotel-card">
-        <img src="images/hotel3.jpg" alt="Santorini Cliffside Villa">
-        <h3>Santorini Cliffside Villa</h3>
-        <p>From 2.8 SOL / 0.045 BTC / 1300 USDT per night</p>
-        <a class="button" href="hotel.html">Book Now</a>
-      </div>
-    </div>
+    <form id="quickBookingForm">
+      <label>Check-in: <input type="date" id="checkin" required></label><br>
+      <label>Check-out: <input type="date" id="checkout" required></label><br>
+      <label>Guests: <input type="number" id="guests" min="1" value="1" required></label><br>
+      <button type="submit" class="button">Book Stay</button>
+    </form>
   </section>
 
   <footer>
